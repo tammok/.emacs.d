@@ -20,10 +20,19 @@
 
 (use-package magit
   :ensure t)
+
 (use-package ess
-	     :ensure t)
+  :ensure t)
+
 (use-package tex
-	     :ensure auctex)
+  :ensure auctex)
+
+(use-package markdown-mode
+  :ensure t)
+
+(use-package pandoc-mode
+  :ensure t
+  :init (add-hook 'markdown-mode-hook 'pandoc-mode))
 
 
 ;; set ipython as standard python shell
@@ -34,7 +43,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
- '(package-selected-packages (quote (ensime use-package))))
+ '(package-selected-packages
+   (quote
+    (markdown-mode pandoc-mode paqndoc-mode ensime use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
