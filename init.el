@@ -10,9 +10,7 @@
 
 (when (not package-archive-contents)
   (package-refresh-contents)
-  (package-install 'use-package)
-  (package-install 'ess)
-  (package-install 'auctex))
+  (package-install 'use-package))
 (require 'use-package)
 
 ;; now use it: http://ensime.org/editors/emacs/install/
@@ -20,6 +18,26 @@
   :ensure t
   :pin melpa-stable)
 
+(use-package magit
+  :ensure t)
+(use-package ess
+	     :ensure t)
+(use-package tex
+	     :ensure auctex)
+
 
 ;; set ipython as standard python shell
 (setq python-shell-interpreter "ipython" python-shell-interpreter-args "--simple-prompt")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(inhibit-startup-screen t)
+ '(package-selected-packages (quote (ensime use-package))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
