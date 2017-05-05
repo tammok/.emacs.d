@@ -34,6 +34,20 @@
   :ensure t
   :init (add-hook 'markdown-mode-hook 'pandoc-mode))
 
+(use-package company
+  :ensure t
+  :config
+  (global-company-mode t))
+
+;; go get -u github.com/nsf/gocode
+(use-package company-go
+  :ensure t
+  :commands company-go)    
+
+(use-package go-mode
+  :ensure t)
+
+
 
 ;; set ipython as standard python shell
 (setq python-shell-interpreter "ipython" python-shell-interpreter-args "--simple-prompt")
