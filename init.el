@@ -11,7 +11,13 @@
 (when (not package-archive-contents)
   (package-refresh-contents)
   (package-install 'use-package))
-(require 'use-package)
+
+;; use-package
+(eval-when-compile
+  (require 'use-package))
+;;(require 'diminish)                ;; if you use :diminish
+;;(require 'bind-key)                ;; if you use any :bind variant
+;;(require 'use-package)
 
 ;; now use it: http://ensime.org/editors/emacs/install/
 (use-package ensime
@@ -22,7 +28,17 @@
   :ensure t)
 
 (use-package ess
-  :ensure t)
+  :ensure t
+  :init
+  (defun my-ess-settings ()
+    (setq ess-indent-with-fancy-comments nil))
+  (add-hook 'ess-mode-hook 'my-ess-settings)
+  :config
+  (ess-toggle-underscore nil)
+)
+(require 'ess-jags-d)
+
+
 
 (use-package tex
   :ensure auctex)
