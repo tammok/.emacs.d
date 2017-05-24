@@ -33,8 +33,6 @@
   (defun my-ess-settings ()
     (setq ess-indent-with-fancy-comments nil))
   (add-hook 'ess-mode-hook 'my-ess-settings)
-  :config
-  (ess-toggle-underscore nil)
 )
 (require 'ess-jags-d)
 
