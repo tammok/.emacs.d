@@ -36,7 +36,8 @@
 )
 (require 'ess-jags-d)
 
-
+(use-package stan-mode
+  :ensure t)
 
 (use-package tex
   :ensure auctex)
