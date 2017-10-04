@@ -74,7 +74,8 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (markdown-mode pandoc-mode paqndoc-mode ensime use-package))))
+    (markdown-mode pandoc-mode paqndoc-mode ensime use-package)))
+ '(visible-bell t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
