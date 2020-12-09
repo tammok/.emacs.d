@@ -19,11 +19,6 @@
 ;;(require 'bind-key)                ;; if you use any :bind variant
 ;;(require 'use-package)
 
-;; now use it: http://ensime.org/editors/emacs/install/
-(use-package ensime
-  :ensure t
-  :pin melpa-stable)
-
 (use-package magit
   :ensure t)
 
@@ -34,7 +29,7 @@
     (setq ess-indent-with-fancy-comments nil))
   (add-hook 'ess-mode-hook 'my-ess-settings)
 )
-(require 'ess-jags-d)
+;;(require 'ess-jags-d)
 
 (use-package stan-mode
   :ensure t)
@@ -62,6 +57,8 @@
 (use-package go-mode
   :ensure t)
 
+(use-package table
+  :ensure t)
 
 
 ;; set ipython as standard python shell
@@ -73,8 +70,7 @@
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   (quote
-    (markdown-mode pandoc-mode paqndoc-mode ensime use-package)))
+   '(sql-indent yaml-mode ess markdown-mode pandoc-mode paqndoc-mode use-package))
  '(visible-bell t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -82,3 +78,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'downcase-region 'disabled nil)
